@@ -147,11 +147,15 @@
 }
 
 
+body {
+  background: white;
+}
 .slider {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: white;
 }
 .slider-container {
   position: relative;
@@ -172,12 +176,21 @@
   opacity: 0;
   animation: fade 36s infinite;
 }
+
 .slider .slides img:nth-child(1) { animation-delay: 0s; }
-.slider .slides img:nth-child(2) { animation-delay: 6s; }
+slider .slides img:nth-child(2) { animation-delay: 6s; }
 .slider .slides img:nth-child(3) { animation-delay: 12s; }
 .slider .slides img:nth-child(4) { animation-delay: 18s; }
 .slider .slides img:nth-child(5) { animation-delay: 24s; }
 .slider .slides img:nth-child(6) { animation-delay: 30s; }
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  8%   { opacity: 1; }
+  25%  { opacity: 1; }
+  33%  { opacity: 0; }
+  100% { opacity: 0; }
+}
 
 .slider h1 {
   position: absolute;
@@ -191,9 +204,25 @@
   z-index: 10;
 }
 
-@keyframes fade {
-  0%, 16.66% { opacity: 1; }
-  16.67%, 100% { opacity: 0; }
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 15;
+}
+.slider-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.slider-dots .dot.active {
+  background: white;
 }
 
 </style>
@@ -302,5 +331,37 @@
       <p>Teléfono: <a href="tel:+34633879142">+34 633 879 142</a></p>
     </div>
 </section>
+
+<script>
+  const slides = document.querySelectorAll('.slider .slides img');
+  const dots = document.querySelectorAll('.slider .dot');
+  let activeIndex = 0;
+  let interval = setInterval(showNext, 5000);
+
+  function showSlide(index) {
+    slides.forEach((img, i) => {
+      img.style.opacity = (i === index) ? 1 : 0;
+    });
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+    activeIndex = index;
+  }
+
+  function showNext() {
+    let nextIndex = (activeIndex + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      showSlide(parseInt(dot.getAttribute('data-index')));
+      interval = setInterval(showNext, 5000);
+    });
+  });
+
+  showSlide(activeIndex);
+</script>
+
 </body>
 </html>
