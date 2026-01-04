@@ -335,6 +335,11 @@ body {
     </ul>
 </section>
 
+  <section>
+  <h2>Virtual Tour</h2>
+  <video src="videos/galeria.mp4" controls  class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
+</section>
+  
 <section>
     <h2>Información Técnica</h2>
     <ul>
@@ -362,6 +367,7 @@ body {
       <input type="text" placeholder="Empresa">
       <input type="email" placeholder="Email" required>
       <input type="tel" placeholder="Teléfono de contacto" required>
+      <textarea name="message" placeholder="Your request or message..." rows="5" style="width:100%;padding:10px;margin-bottom:10px;"></textarea>
       <button type="submit">Enviar</button>
     </form>
     <div class="contact-info">
@@ -370,93 +376,11 @@ body {
     </div>
 </section>
 
-<div id="lightbox" class="lightbox">
-  <img id="lightbox-img" src="" alt="Zoomed Image">
-</div>
-
-<script>
-  document.querySelectorAll('.slides img').forEach(img => {
-    img.addEventListener('click', () => {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightbox.style.display = 'block';
-      lightboxImg.src = img.src;
-    });
-  });
-
-  document.getElementById('lightbox').addEventListener('click', () => {
-    document.getElementById('lightbox').style.display = 'none';
-  });
-</script>
 
 
-<section class="section lang en visible">
-  <h2>Room 1</h2>
-  <img src="images/room1.jpg" alt="Room 1" onclick="openLightbox('images/room1.jpg')" style="max-width:80%;cursor:pointer;border-radius:10px;">
-  <p>Main event hall with natural light, ideal for large productions and exhibitions.</p>
-</section>
 
-<section class="section lang en visible">
-  <h2>Virtual Tour</h2>
-  <video src="videos/galeria.mp4" controls onclick="openVideoLightbox()" class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
-</section>
-<section class="section lang es">
-  <h2>Visita virtual</h2>
-  <video src="videos/galeria.mp4" controls onclick="openVideoLightbox()" class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
-</section>
 
-<section class="section lang es">
-  <h2>Sala 1</h2>
-  <img src="images/room1.jpg" alt="Room 1" onclick="openLightbox('images/room1.jpg')" style="max-width:80%;cursor:pointer;border-radius:10px;">
-  <p>Sala principal con luz natural, ideal para producciones y exposiciones de gran formato.</p>
-</section>
 
-<section class="section lang en visible">
-  <h2>Room 2</h2>
-  <img src="images/room2.jpg" alt="Room 2" onclick="openLightbox('images/room2.jpg')" style="max-width:80%;cursor:pointer;border-radius:10px;">
-  <p>More intimate space with LED lighting for showrooms, meetings, or private events.</p>
-</section>
-
-<section class="section lang en visible">
-  <h2>Virtual Tour</h2>
-  <video src="videos/galeria.mp4" controls onclick="openVideoLightbox()" class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
-</section>
-<section class="section lang es">
-  <h2>Visita virtual</h2>
-  <video src="videos/galeria.mp4" controls onclick="openVideoLightbox()" class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
-</section>
-
-<section class="section lang es">
-  <h2>Sala 2</h2>
-  <img src="images/room2.jpg" alt="Room 2" onclick="openLightbox('images/room2.jpg')" style="max-width:80%;cursor:pointer;border-radius:10px;">
-  <p>Sala íntima con iluminación LED para showrooms, reuniones o eventos privados.</p>
-</section>
-
-<section class="section lang en visible">
-  <h2>Tour the Venue</h2>
-  <video src="videos/galeria.mp4" controls onclick="openVideoLightbox()" class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
-</section>
-
-<section class="section lang en visible">
-  <h2>Virtual Tour</h2>
-  <video src="videos/galeria.mp4" controls onclick="openVideoLightbox()" class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
-</section>
-<section class="section lang es">
-  <h2>Visita virtual</h2>
-  <video src="videos/galeria.mp4" controls onclick="openVideoLightbox()" class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
-</section>
-
-<section class="section lang es">
-  <h2>Visita tour a las instalaciones</h2>
-  <video src="videos/galeria.mp4" controls onclick="openVideoLightbox()" class="thumb" style="max-width:80%;cursor:pointer;border-radius:10px;"></video>
-</section>
-
-<div id="imgLightbox" class="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img" src="">
-</div>
-<div id="vidLightbox" class="video-lightbox" onclick="this.style.display='none'">
-  <video id="lightbox-video" src="videos/galeria.mp4" autoplay controls></video>
-</div>
 
 <style>
   .lightbox, .video-lightbox {
@@ -487,32 +411,6 @@ body {
     vid.play();
   }
 </script>
-
-
-<section class="section lang en">
-  <h2>Contact Us</h2>
-  <form action="mailto:marcbibiloni@gmail.com" method="post" enctype="text/plain" style="max-width: 500px; margin: auto;">
-    <input type="text" name="name" placeholder="Name" required style="width:100%;padding:10px;margin-bottom:10px;">
-    <input type="text" name="company" placeholder="Company" required style="width:100%;padding:10px;margin-bottom:10px;">
-    <input type="email" name="email" placeholder="Email" required style="width:100%;padding:10px;margin-bottom:10px;">
-    <input type="tel" name="phone" placeholder="Phone" required style="width:100%;padding:10px;margin-bottom:10px;">
-    <textarea name="message" placeholder="Your request or message..." rows="5" style="width:100%;padding:10px;margin-bottom:10px;"></textarea>
-    <button type="submit" style="padding: 10px 20px;">Send</button>
-  </form>
-</section>
-
-
-<section class="section lang es">
-  <h2>Contacto</h2>
-  <form action="mailto:marcbibiloni@gmail.com" method="post" enctype="text/plain" style="max-width: 500px; margin: auto;">
-    <input type="text" name="name" placeholder="Nombre" required style="width:100%;padding:10px;margin-bottom:10px;">
-    <input type="text" name="company" placeholder="Empresa" required style="width:100%;padding:10px;margin-bottom:10px;">
-    <input type="email" name="email" placeholder="Email" required style="width:100%;padding:10px;margin-bottom:10px;">
-    <input type="tel" name="phone" placeholder="Teléfono" required style="width:100%;padding:10px;margin-bottom:10px;">
-    <textarea name="message" placeholder="Tu petición o mensaje..." rows="5" style="width:100%;padding:10px;margin-bottom:10px;"></textarea>
-    <button type="submit" style="padding: 10px 20px;">Enviar</button>
-  </form>
-</section>
 
 </body>
 </html>
