@@ -111,7 +111,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  animation: slide 30s infinite;
+  animation: fade 30s infinite;
 }
 .slider .slides img {
   width: 100%;
@@ -129,6 +129,14 @@
 .slider .slides img:nth-child(5) { animation-delay: 20s; }
 .slider .slides img:nth-child(6) { animation-delay: 25s; }
 
+@keyframes fade {
+  0% { opacity: 1; }
+  16.66% { opacity: 1; }
+  16.67% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
 .slider h1 {
   position: absolute;
   bottom: 40px;
@@ -141,40 +149,9 @@
   z-index: 10;
 }
 
-@keyframes slide {
+@keyframes fade {
   0%, 16.66% { opacity: 1; }
   16.67%, 100% { opacity: 0; }
-}
-
-
-@media (max-width: 768px) {
-  header h1, .slider h1 {
-    font-size: 1.5em;
-    padding: 10px;
-    bottom: 20px;
-    left: 20px;
-  }
-
-  section {
-    padding: 40px 15px;
-  }
-
-  input, textarea, button {
-    font-size: 1em;
-    padding: 12px;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .slider .slides img {
-    object-position: center;
-  }
-
-  iframe {
-    height: 200px;
-  }
 }
 
 </style>
